@@ -1,8 +1,30 @@
-# تفسير السعدي وابن كثير — Tafsir As-Sa'di & Ibn Kathir (JSON)
+# بيانات التفاسير القرآنية (JSON) — Quran Tafsir Dataset
 
-بيانات القرآن الكريم كاملًا (114 سورة، 6236 آية) مع تفسيرين لكل آية: **تفسير السعدي** و **تفسير ابن كثير**، بصيغة JSON جاهزة للاستخدام في التطبيقات والمواقع.
+بيانات القرآن الكريم كاملًا (114 سورة، 6236 آية) بصيغة JSON جاهزة للاستخدام في التطبيقات والمواقع.
 
-Complete Quran text (114 surahs, 6,236 ayahs), each ayah paired with two commentaries: **Tafsir As-Sa'di** and **Tafsir Ibn Kathir**, in JSON format ready for use in apps and websites.
+تتضمن الملفات التفاسير التالية:
+
+- التفسير الميسر
+- تفسير الجلالين
+- تفسير السعدي
+- تفسير ابن كثير
+- تفسير الوسيط لطنطاوي
+- تفسير البغوي
+- تفسير القرطبي
+- تفسير الطبري
+
+Complete Quran text (114 surahs, 6,236 ayahs) in JSON format ready for use in apps and websites.
+
+The dataset includes the following tafsir sources:
+
+- Al-Tafsir Al-Muyassar
+- Tafsir Al-Jalalayn
+- Tafsir As-Sa'di
+- Tafsir Ibn Kathir
+- Tafsir Al-Waseet (Tantawi)
+- Tafsir Al-Baghawi
+- Tafsir Al-Qurtubi
+- Tafsir Al-Tabari
 
 [العربية](#العربية) | [English](#english)
 
@@ -13,7 +35,7 @@ Complete Quran text (114 surahs, 6,236 ayahs), each ayah paired with two comment
 ### المحتويات
 
 - 114 ملف JSON، ملف واحد لكل سورة، بالتسمية `NNN_اسم-السورة.json` (مثال: `001_al-fatiha.json`).
-- كل آية تحتوي على: رقم الآية، نص الآية، ثم تفسيرين مرتبين: تفسير السعدي، ثم تفسير ابن كثير.
+- كل آية تحتوي على: رقم الآية، نص الآية، ثم مصفوفة `tafsir` (تضم التفاسير المتاحة لهذه الآية).
 - **تقسيم الآيات يتبع تفسير ابن كثير** (وهو تقسيم المصحف القياسي المتعارف عليه) في كل السور الـ 114، بما فيها السور التي لم تكن مكتملة في مصادر سابقة.
 - إجمالي عدد الآيات في كل الملفات: **6236 آية**، وهو العدد الصحيح لآيات القرآن الكريم، وقد جرى التحقق من ذلك.
 
@@ -29,11 +51,23 @@ Complete Quran text (114 surahs, 6,236 ayahs), each ayah paired with two comment
       "text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
       "tafsir": [
         {
+          "type": "تفسير الجلالين",
+          "text": "..."
+        },
+        {
+          "type": "التفسير الميسر",
+          "text": "..."
+        },
+        {
           "type": "تفسير السعدي",
           "text": "..."
         },
         {
           "type": "تفسير ابن كثير",
+          "text": "..."
+        },
+        {
+          "type": "تفسير القرطبي",
           "text": "..."
         }
       ]
@@ -48,7 +82,7 @@ Complete Quran text (114 surahs, 6,236 ayahs), each ayah paired with two comment
 
 ### تنبيه
 
-هذا العمل هو تجميع آلي لبيانات من مصادر عامة متفرقة. رغم التحقق الدقيق من تطابق تقسيم الآيات وعددها الإجمالي (6236)، يُنصح بمراجعة النصوص عند الاستخدام في سياقات حساسة، ومقارنتها بنسخة مطبوعة أو موثوقة من كتابي التفسير الأصليين.
+هذا العمل هو تجميع آلي لبيانات من مصادر عامة متفرقة. رغم التحقق الدقيق من تطابق تقسيم الآيات وعددها الإجمالي (6236)، يُنصح بمراجعة النصوص عند الاستخدام في سياقات حساسة، ومقارنتها بنسخ مطبوعة أو موثوقة من كتب التفسير الأصلية.
 
 ---
 
@@ -57,7 +91,7 @@ Complete Quran text (114 surahs, 6,236 ayahs), each ayah paired with two comment
 ### Contents
 
 - 114 JSON files, one per surah, named `NNN_surah-slug.json` (e.g. `001_al-fatiha.json`).
-- Each ayah contains: ayah number, ayah text, and two ordered commentaries: Tafsir As-Sa'di, then Tafsir Ibn Kathir.
+- Each ayah contains: ayah number, ayah text, and a `tafsir` array (with available commentaries for that ayah).
 - **Ayah splitting follows Tafsir Ibn Kathir's numbering** (the standard mushaf convention) across all 114 surahs, including surahs that were incomplete in prior sources.
 - Total ayahs across all files: **6,236** — the correct total for the Quran, verified during generation.
 
@@ -92,4 +126,4 @@ Some ayahs show an empty tafsir string for one of the two commentators. This is 
 
 ### Disclaimer
 
-This is an automated compilation from separate public sources. While ayah splitting and the total ayah count (6,236) were carefully verified, users are encouraged to cross-check the text against a printed or otherwise authoritative edition of these two tafsirs before relying on it in sensitive contexts.
+This is an automated compilation from separate public sources. While ayah splitting and the total ayah count (6,236) were carefully verified, users are encouraged to cross-check the text against printed or otherwise authoritative editions of the original tafsir books before relying on it in sensitive contexts.
