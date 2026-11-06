@@ -19,6 +19,19 @@ A comprehensive, structured JSON database for the Holy Quran and its interpretat
 - **بيانات مهيكلة (Structured Data):** سهلة الاستعلام والربط مع قواعد البيانات مثل MongoDB.
 - **جاهزة للواجهات البرمجية (API-Ready):** مثالية لبناء REST APIs لتطبيقات القرآن الكريم.
 - **دقة عالية:** تم مطابقة وتقسيم الآيات (6236 آية) بناءً على تقسيم مصحف المدينة المعتمد.
+- **التقسيم الموضوعي (جديد):** ملف واحد يقسم الآيات كلها إلى موضوعات، لكل موضوع مدى آياته ونصه
+  وتصنيفه ولونان. التفاصيل في [`topical-division/`](./topical-division/README.md).
+
+## 🎨 التقسيم الموضوعي (Topical division)
+
+في مجلد [`topical-division/`](./topical-division/) ملف `topics.json`: ١٢٣١ موضوعا تغطي آيات
+القرآن كلها، لكل موضوع السورة ومدى الآيات (من آية إلى آية) ونص الموضوع وتصنيفه، ولونان: لون عام
+(٧ ألوان) ولون تفصيلي (٢١ لونا). نقل من جدول «التقسيم الموضوعي» في كتاب «التفسير الموضوعي للحافظ
+المتقن مع أسباب النزول وشرح المفردات» (دار غار حراء، دمشق). يكفي أن تعطي الملف لوكيل ذكاء
+اصطناعي ليلون به مصحفك؛ انظر [`topical-division/README.md`](./topical-division/README.md).
+
+`topical-division/topics.json` maps every ayah of the Quran to one of 1,231 topics, each with a general
+colour (7 families) and a detailed colour (21 categories). See [`topical-division/README.md`](./topical-division/README.md).
 
 ## العربية
 
